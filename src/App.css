@@ -1,38 +1,111 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.calcBox {
+  width: 100%;
+  height: 100vh;
+  background-color: black;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  border: 1px solid yellow;
+}
+
+.calculator {
+  border: 5px solid teal;
+  width: 380px;
+  height: 560px;
+  padding: 20px;
+  border-radius: 30px;
+}
+
+.input {
+  border: 1px solid teal;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  margin: 10px;
+  height: 165px;
+}
+
+
+
+
+.input input,
+.input div {
+  padding: 10px;
+  border: none;
+  outline: none;
+  background-color: black;
   color: white;
+  text-align: right;
+  font-size: 25px;
+  font-weight: 700;
 }
 
-.App-link {
-  color: #61dafb;
+.input input {
+  border-bottom: 1px solid teal !important;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+.buttonBox {
+  height: 350px;
+  gap: 10px;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(4, 60px);
+  grid-template-rows: repeat(5, 60px);
+}
+
+.buttonBox button {
+  border: none;
+  border-radius: 50%;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  background-color: black;
+
+  &:hover {
+    background-color: teal;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.symbol {
+  color: teal !important;
+
+  &:hover {
+    background-color: rgb(202, 198, 198) !important;
+  }
+}
+
+@media screen and (max-width:600px) {
+  .symbol {
+    color: white;
+  }
+
+  .calculator {
+    width: 300px;
+    height: 490px;
+  }
+
+  .input {
+    height: 130px;
+    width: 230px;
+  }
+
+  .input input,
+  .input div {
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  .buttonBox {
+    gap: 0px;
+  }
+
+  .buttonBox button {
+    font-size: 15px;
   }
 }
